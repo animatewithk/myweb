@@ -1,20 +1,14 @@
-const express = require('express');
-const fs = require('fs')
-const app = express();
-const port = 1000;
+const express = require('express')
+const path = require('path')
 
-//management of files
+const app = express()
 
-//management of requests and responses
+
 app.get('/', (req, res)=>{
-	res.send('hello world')
-});
+	res.send('success')
+})
 
-app.get('/about', (req, res)=>{
-	res.send('This is about page')
-});
 
-//port configuration
-app.listen(port, ()=>{
-	console.log("the server is started successfully")
-});
+app.listen(1000, ()=>{
+	console.log('done')
+})
