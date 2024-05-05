@@ -3,14 +3,13 @@ const path = require('path')
 
 const app = express()
 
-const StaticPath = path.join(__dirname, 'public')
-app.use(express.static(StaticPath))
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'))
 
 app.get('/', (req, res)=>{
-	res.sendFile(path.join(StaticPath, 'index.html'))
-})
-app.get('/about', (req, res)=>{
-	res.sendFile(path.join(StaticPath, 'about.html'))
+	res.render('index', {
+		message: 'hello world'
+	})
 })
 
 app.listen(1000, ()=>{
